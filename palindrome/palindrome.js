@@ -1,7 +1,8 @@
 const { showCompletionScript } = require("yargs");
 
 function palindrome (str) {
-  console.log(str);
+  
+  let regExp = /[\W_]/g;
 
   let reversedStrArr = [];
   let reversedStr = "";
