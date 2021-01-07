@@ -1,25 +1,20 @@
-function sort (arr) {
-  console.log(arr);
-
-  function compare(a, b) {
-    if (a > b) {
-      return false
+function bubbleSort(array) {
+  var done = false;
+  while (!done) {
+    done = true;
+    for (var i = 1; i < array.length; i++) {
+      if (array[i - 1] > array[i]) {
+        done = false;
+        var toMove = array[i - 1];
+        array[i - 1] = array[i];
+        array[i] = toMove;
+      }
     }
   }
 
-  for (let i = 0; i < arr.length - 1; i++) {
-    let first = arr[i]
-    let second = arr[i + 1]
-    if (compare(first, second) == false) {
-      arr[i] = second
-      arr[i + 1] = first
-    }
-    
-    console.log(arr);
-  }
-
-
-  console.log(arr)
+  return array;
 }
 
-sort([2,1,14,27,6]);
+var numbers = [12, 10, 15, 11, 14, 13, 16];
+bubbleSort(numbers);
+console.log(numbers);
